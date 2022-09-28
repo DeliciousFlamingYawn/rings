@@ -1,0 +1,324 @@
+:root {
+  --background: rgb(0, 0, 0);
+}
+
+html, body { 
+  height: 100%; 
+}
+
+h1{
+  color: white;
+}
+
+h2{
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+body { 
+  margin: 0; 
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  background: var(--background); 
+}
+
+.circles-container {
+  position: relative;
+  height: 250px; width: 250px;
+}
+
+.dot {
+  z-index: 2;
+  position: absolute;
+  height: 100%; width: 100%;
+  transition: transform 400ms;
+  transform: rotate(0);
+}
+
+.dot:after {
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  height: 32px; width: 32px;
+  background: transparent;
+  border-radius: 100%;
+  box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.24);
+}
+
+.ring {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+  border-radius: 100%;
+}
+
+.ring:before {
+  content: '';
+  position: absolute;
+  height: 100%; width: 100%;
+  border-radius: 100%;
+} 
+
+.ring:after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+  height: 57px; width: 57px;
+  background: var(--background);
+  border-radius: 100%;
+}
+
+.progress-ring {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 350ms;
+  transform: rotate(270deg);
+  transform-origin: 50% 50%;
+}
+
+
+
+.brandedPayment.ring {
+  height: 250px; width: 250px;
+  z-index: 999;
+  background: rgba(54, 51, 246, 0.32);
+}
+
+.brandedPayment.ring:before {
+  box-shadow: 1px 0px 3px rgba(54, 51, 246, .48);
+}
+
+.brandedPayment.ring:after {
+  box-shadow: inset 1px 0 3px rgba(54, 51, 246, .48);
+}
+
+.totalTech.ring {
+  height: 185px; width: 185px;
+  z-index: 999;
+  background: rgba(209, 96, 3, 0.32);
+}
+.totalTech.ring:after {
+  box-shadow: inset 1px 0 3px rgba(209, 96, 3, .48);
+}
+
+.npsCommit.ring {
+  height: 122px; width: 122px;
+  z-index: 999;
+  background: rgba(184, 165, 0, 0.32);
+}
+.npsCommit.ring:after {
+  box-shadow: inset 1px 0 3px rgba(184, 165, 0, .48);
+}
+
+
+.card {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.884);
+  border-radius: 25px;
+  padding: 50px;
+  transition: transform 0.5s;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.9);
+  
+  /* margin-bottom: 25vh; */
+
+}
+
+.visual-card {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  padding: 32px 32px 32px 32px;
+  transition: transform 0.5s;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+  zoom: 2.5;
+}
+
+.info {
+  margin-left: 32px;
+}
+
+.info .row {
+  font-size: 32px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  margin: 6px;
+  /*   https://css-tricks.com/almanac/properties/u/user-select/ */
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+
+.info .row.brandedPayment { color: #0765dc; }
+.info .row.totalTech { color: #fd6836; }
+.info .row.npsCommit { color: #dbd50b; }
+
+.controls {
+  margin: 50px;
+  display: flex;
+  position: relative;
+  margin-left: 50%;
+  margin-right: auto;
+  transform: translateX(-50%);
+  background: rgba(51, 51, 51, 0.884);
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.9);
+}
+
+
+.submit {
+  background-color: #0429d0;
+  color: rgb(238, 234, 20);
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+.submit:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.number-input {
+  --color: white;
+  border: 1px solid var(--color);
+  border-radius: 5px;
+  color: var(--color);
+  margin-right: 16px;
+}
+
+.number-input span {
+  display: block;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--color);
+  transition: all 300ms;
+  font-weight: 700;
+/*   https://css-tricks.com/almanac/properties/u/user-select/ */
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+
+.number-input .increase:hover,
+.number-input .decrease:hover {
+  cursor: pointer;
+  background: var(--color);
+  color: white;
+}
+
+
+.number-input[data-target="brandedPayment"] {
+  --color: #0765dc;
+}
+.number-input[data-target="totalTech"] {
+  --color: #fd6836;
+}
+.number-input[data-target="npsCommit"] {
+  --color: #dbd50b;
+}
+
+.datapoints {
+  color: white;
+  /* display: none; */
+}
+
+.form {
+  display: block;
+  background: rgba(51, 51, 51, 0.884);
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.9);
+}
+
+input[type=number], select, textarea{
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 50px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #0429d0;
+  color: rgb(238, 234, 20);
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.goal-text {
+  color: yellow;
+}
+/* @media only screen and (max-width: 600px) {
+  
+  .controls { 
+    zoom: 0.8;
+  }
+
+  .circles-container {
+    zoom: 0.5;
+   }
+
+   .form {
+    display: block;
+    background: rgba(0, 0, 0, 0.884);
+    border-radius: 25px;
+    padding: 35px;
+    zoom: 0.7;
+  }
+
+  .visual-card{
+    zoom: 0.8;
+  }
+} */

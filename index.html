@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>1491 Progress</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/tracker/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/tracker/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/tracker/favicon-16x16.png">
+<link rel="manifest" href="/favicons/tracker/site.webmanifest">
+
+<body>
+
+  <div class="visual-card">
+  
+    <div class="circles-container">
+      <div class="brandedPayment ring" id="brandedPayment">
+        <div class="dot"></div>
+        <svg class="progress-ring" height="250" width="250">
+          <linearGradient id="aGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <!-- 
+            <stop offset="0%" stop-color="#F6337A"/> 246, 51, 122
+            <stop offset="100%" stop-color="#F71046"/> 246, 16, 70 -->
+            <stop offset="0%" stop-color="#043494"/>
+            <stop offset="100%" stop-color="#0765dc"/>
+          </linearGradient>
+          <circle class="progress-ring__circle"
+                  stroke-width="32" stroke-linecap="round" stroke="url(#aGradient)"
+                  fill="transparent"
+                  r="109" cx="125" cy="125"/>
+        </svg>
+      </div>
+
+      <div class="totalTech ring" id="totalTech">
+        <div class="dot"></div>
+        <svg class="progress-ring" height="185" width="185">
+          <linearGradient id="eGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <!-- 
+            <stop offset="0%" stop-color="#B1FD36"/> 177, 253, 54
+            <stop offset="100%" stop-color="#6FE430"/> 111, 228, 48 -->
+            <stop offset="0%" stop-color="#fd6836"/>
+            <stop offset="100%" stop-color="#e46630"/>
+          </linearGradient>
+          <circle class="progress-ring__circle"
+                  stroke-width="32" stroke-linecap="round" stroke="url(#eGradient)"
+                  fill="transparent"
+                  r="77" cx="92.5" cy="92.5"/>
+        </svg>
+      </div>
+
+      <div class="npsCommit ring" id="npsCommit">
+        <div class="dot"></div>
+        <svg class="progress-ring" height="122" width="122">
+          <linearGradient id="sGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <!--
+            <stop offset="0%" stop-color="#15C2E0"/> 21, 194, 224
+            <stop offset="100%" stop-color="#1EF8D5"/> 30, 248, 213 -->
+            <stop offset="0%" stop-color="#f8f10c"/>
+            <stop offset="100%" stop-color="#dbd50b"/>
+          </linearGradient>
+          <circle class="progress-ring__circle"
+                  stroke-width="32" stroke-linecap="round" stroke="url(#sGradient)"
+                  fill="transparent"
+                  r="45" cx="61" cy="61"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="row brandedPayment"><span id="brandedPaymentValue"></span>/<span id="brandedPaymentGoal"></span></div>
+      <div class="row totalTech"><span id="totalTechValue"></span>/<span id="totalTechGoal"></span></div>
+      <div class="row npsCommit"><span id="npsCommitValue"></span>/<span id="npsCommitGoal"></span></div>
+    </div>
+
+    <div class="value" id="value1" >0</div>
+    <div class="value" id="value2" >0</div>
+    <div class="value" id="value3" >0</div>
+
+</div>
+
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="script.js"></script>
+<script> window.onload = FetchAllData(); </script>
+<script> checkForChanges() </script>
+</html>
